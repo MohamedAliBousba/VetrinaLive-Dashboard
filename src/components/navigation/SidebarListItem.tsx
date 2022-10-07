@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Fragment } from "react";
-import ChevronUpIcon from "../assets/ChevronUpIcon";
-import ChevronDownIcon from "../assets/ChevronDownIcon";
+import ChevronUpIcon from "../../assets/ChevronUpIcon";
+import ChevronDownIcon from "../../assets/ChevronDownIcon";
 import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
 import {
@@ -18,7 +18,7 @@ const itemStyle = {
 };
 
 interface IListItem extends ListItemProps {
-  issubitem?: boolean;
+  issubitem?: boolean | number;
 }
 
 const StyledListItem = styled(ListItem)<IListItem>(({ issubitem }) => ({
@@ -72,7 +72,7 @@ const SidebarListItem = ({ item }: any) => {
       <Collapse in={open} timeout="auto" unmountOnExit>
         <List component="div" disablePadding>
             { item.subItems?.map((subItem: any) => (
-                <StyledListItem issubitem sx={{ pl: 7 }} key={subItem}>
+                <StyledListItem issubitem={1} sx={{ pl: 7 }} key={subItem}>
                     <ListItemText primary={subItem} />
                 </StyledListItem>
             )) }

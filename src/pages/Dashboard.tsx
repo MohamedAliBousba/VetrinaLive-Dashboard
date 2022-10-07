@@ -1,7 +1,8 @@
-import { Box } from "@mui/material";
+import { Box, Toolbar } from "@mui/material";
 import { useState } from "react";
-import Header from "../components/Header";
-import Sidebar from "../components/Sidebar";
+import DashboardWelcomeSection from "../components/DashboardWelcomeSection";
+import Header from "../components/navigation/Header";
+import Sidebar from "../components/navigation/Sidebar";
 
 const Dashboard = () => {
   const [open, setOpen] = useState(false);
@@ -10,6 +11,10 @@ const Dashboard = () => {
     <Box display="flex">
       <Header open={open} />
       <Sidebar open={open} setOpen={setOpen} />
+      <div style={{width: "100%"}}>
+        <Toolbar />
+        <DashboardWelcomeSection />
+      </div>
     </Box>
   );
 };

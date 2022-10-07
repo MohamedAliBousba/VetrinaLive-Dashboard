@@ -1,21 +1,21 @@
 import ListItem from "@mui/material/ListItem";
 import { List, styled } from "@mui/material";
-import HomeIcon from "../assets/HomeIcon";
-import CatalogIcon from "../assets/CatalogIcon";
-import OrdersIcon from "../assets/OrdersIcon";
-import CustomerIcon from "../assets/CustomerIcon";
-import MarketingIcon from "../assets/MarketingIcon";
-import DeliveryIcon from "../assets/DeliveryIcon";
-import PaymentIcon from "../assets/PaymentIcon";
-import BrushIcon from "../assets/BrushIcon";
-import CreditCardIcon from "../assets/CreditCardIcon";
-import IntegrationIcon from "../assets/IntegrationIcon";
-import ExtensionIcon from "../assets/ExtensionIcon";
-import SettingsIcon from "../assets/SettingsIcon";
-import LogoutIcon from "../assets/LogoutIcon";
-import HelpIcon from "../assets/HelpIcon";
-import ShareIcon from "../assets/ShareIcon";
-import EyeIcon from "../assets/EyeIcon";
+import HomeIcon from "../../assets/HomeIcon";
+import CatalogIcon from "../../assets/CatalogIcon";
+import OrdersIcon from "../../assets/OrdersIcon";
+import CustomerIcon from "../../assets/CustomerIcon";
+import MarketingIcon from "../../assets/MarketingIcon";
+import DeliveryIcon from "../../assets/DeliveryIcon";
+import PaymentIcon from "../../assets/PaymentIcon";
+import BrushIcon from "../../assets/BrushIcon";
+import CreditCardIcon from "../../assets/CreditCardIcon";
+import IntegrationIcon from "../../assets/IntegrationIcon";
+import ExtensionIcon from "../../assets/ExtensionIcon";
+import SettingsIcon from "../../assets/SettingsIcon";
+import LogoutIcon from "../../assets/LogoutIcon";
+import HelpIcon from "../../assets/HelpIcon";
+import ShareIcon from "../../assets/ShareIcon";
+import EyeIcon from "../../assets/EyeIcon";
 import SidebarListItem from "./SidebarListItem";
 
 const SidebarList = () => {

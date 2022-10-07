@@ -1,7 +1,7 @@
 import Toolbar from "@mui/material/Toolbar";
 import AppBar, { AppBarProps as MuiAppBarProps } from "@mui/material/AppBar";
 import { Badge, BadgeProps, Stack, styled } from "@mui/material";
-import FlashIcon from "../assets/FlashIcon";
+import FlashIcon from "../../assets/FlashIcon";
 
 const drawerWidth = 240;
 

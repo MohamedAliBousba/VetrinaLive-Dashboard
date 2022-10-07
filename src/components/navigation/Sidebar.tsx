@@ -3,8 +3,8 @@ import IconButton from "@mui/material/IconButton";
 import { styled } from "@mui/material";
 import Drawer from "@mui/material/Drawer";
 import SidebarList from "./SidebarList";
-import Logo from "../assets/Logo";
-import MenuIcon from "../assets/MenuIcon";
+import Logo from "../../assets/Logo";
+import MenuIcon from "../../assets/MenuIcon";
 import { useState } from "react";
 import SelectShop from "./SelectShop";
 
