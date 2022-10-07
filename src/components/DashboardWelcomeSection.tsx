@@ -1,4 +1,4 @@
-import { Box, Stack } from "@mui/material";
+import { Box, Container, Stack } from "@mui/material";
 import ExternalLinkIcon from "../assets/ExternalLinkIcon";
 
 const sectionStyle = {
@@ -23,7 +23,13 @@ const linkStyle = {
 const DashboardWelcomeSection = () => {
   return (
     <div style={sectionStyle}>
-      <Box display="flex" alignItems="center" justifyContent="space-around">
+      <Container
+        sx={{
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "space-between"
+        }}
+      >
         <h2 style={welcomeTextStyle}>Welcome Mario!</h2>
 
         <a
@@ -33,11 +39,13 @@ const DashboardWelcomeSection = () => {
           style={linkStyle}
         >
           <Stack direction="row" spacing={1}>
-            <p style={{textDecoration: "underline"}}>app.vetrinalive.it/fenoh-store</p>
+            <p style={{ textDecoration: "underline" }}>
+              app.vetrinalive.it/fenoh-store
+            </p>
             <ExternalLinkIcon />
           </Stack>
         </a>
-      </Box>
+      </Container>
     </div>
   );
 };

@@ -1,5 +1,6 @@
 import { Box, Toolbar } from "@mui/material";
 import { useState } from "react";
+import CardsCollection from "../components/dashboard-cards/CardsCollection";
 import DashboardWelcomeSection from "../components/DashboardWelcomeSection";
 import Header from "../components/navigation/Header";
 import Sidebar from "../components/navigation/Sidebar";
@@ -14,6 +15,7 @@ const Dashboard = () => {
       <div style={{width: "100%"}}>
         <Toolbar />
         <DashboardWelcomeSection />
+        <CardsCollection />
       </div>
     </Box>
   );
