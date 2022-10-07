@@ -1,12 +1,12 @@
-import React from "react";
 import Divider from "@mui/material/Divider";
 import IconButton from "@mui/material/IconButton";
-import AdminHeaderList from "./SidebarList";
-import { styled, useMediaQuery, Stack } from "@mui/material";
+import { styled } from "@mui/material";
 import Drawer from "@mui/material/Drawer";
 import SidebarList from "./SidebarList";
-import MenuIcon from "../assets/MenuIcon";
 import Logo from "../assets/Logo";
+import MenuIcon from "../assets/MenuIcon";
+import { useState } from "react";
+import SelectShop from "./SelectShop";
 
 const drawerWidth = 240;
 
@@ -34,13 +34,14 @@ const StyledDrawer = styled(Drawer)(({ open, theme }) => ({
         easing: theme.transitions.easing.sharp,
         duration: theme.transitions.duration.leavingScreen
       }),
-      width: theme.spacing(7)
+      width: theme.spacing(6.5)
     })
   }
 }));
 
 const Sidebar = (props: any) => {
   const { open, setOpen } = props;
+  const [selectedShop, setSelectedShop] = useState("Fenoh Store");
 
   const handleDrawerOpen = () => {
     setOpen(!open);
@@ -56,6 +57,12 @@ const Sidebar = (props: any) => {
       </div>
       <Divider />
       <SidebarList />
+      {open && (
+        <SelectShop
+          selectedShop={selectedShop}
+          setSelectedShop={setSelectedShop}
+        />
+      )}
       <Divider />
     </StyledDrawer>
   );

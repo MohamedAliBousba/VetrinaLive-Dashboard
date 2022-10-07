@@ -30,7 +30,7 @@ const StyledAppBar = styled(AppBar, {
         duration: theme.transitions.duration.enteringScreen
       }),
 
-  width: `calc(100% - ${theme.spacing(7)})`,
+  width: `calc(100% - ${theme.spacing(6.5)})`,
   ...(open && {
     width: `calc(100% - ${drawerWidth}px)`
   })

@@ -1,33 +1,33 @@
 import React from "react";
 import { IconType } from "../types/IconType";
 
-const MenuIcon: React.FC<IconType> = ({color}) => {
+const LogoutIcon: React.FC<IconType> = ({color}) => {
   return (
     <svg
-      width="25"
-      height="24"
-      viewBox="0 0 25 24"
+      width="20"
+      height="20"
+      viewBox="0 0 20 20"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
     >
       <path
-        d="M3.25116 12H21.2512"
+        d="M7.5 17.5H4.16667C3.72464 17.5 3.30072 17.3244 2.98816 17.0118C2.67559 16.6993 2.5 16.2754 2.5 15.8333V4.16667C2.5 3.72464 2.67559 3.30072 2.98816 2.98816C3.30072 2.67559 3.72464 2.5 4.16667 2.5H7.5"
         stroke={color ?? "#103B66"}
-        stroke-width="2"
+        stroke-width="1.5"
         stroke-linecap="round"
         stroke-linejoin="round"
       />
       <path
-        d="M3.25116 6H21.2512"
+        d="M13.3333 14.1667L17.5 10L13.3333 5.83334"
         stroke={color ?? "#103B66"}
-        stroke-width="2"
+        stroke-width="1.5"
         stroke-linecap="round"
         stroke-linejoin="round"
       />
       <path
-        d="M3.25116 18H21.2512"
+        d="M17.5 10H7.5"
         stroke={color ?? "#103B66"}
-        stroke-width="2"
+        stroke-width="1.5"
         stroke-linecap="round"
         stroke-linejoin="round"
       />
@@ -35,4 +35,4 @@ const MenuIcon: React.FC<IconType> = ({color}) => {
   );
 };
 
-export default MenuIcon;
+export default LogoutIcon;
