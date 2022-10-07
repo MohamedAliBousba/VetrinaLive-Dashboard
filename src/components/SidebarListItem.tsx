@@ -57,7 +57,7 @@ const SidebarListItem = ({ item }: any) => {
   };
 
   return (
-    <Fragment key={item.title}>
+    <Fragment>
       <StyledListItem onClick={handleOpen}>
         <ListItemIcon sx={itemStyle}>{item.icon}</ListItemIcon>
         <ListItemText primary={item.title} />
@@ -72,7 +72,7 @@ const SidebarListItem = ({ item }: any) => {
       <Collapse in={open} timeout="auto" unmountOnExit>
         <List component="div" disablePadding>
             { item.subItems?.map((subItem: any) => (
-                <StyledListItem issubitem sx={{ pl: 7 }}>
+                <StyledListItem issubitem sx={{ pl: 7 }} key={subItem}>
                     <ListItemText primary={subItem} />
                 </StyledListItem>
             )) }

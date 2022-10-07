@@ -13,9 +13,9 @@ const FlashIcon: React.FC<IconType> = ({color}) => {
       <path
         d="M13 2L3 14H12L11 22L21 10H12L13 2Z"
         stroke={color ?? "#103B66"}
-        stroke-width="2"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       />
     </svg>
   );

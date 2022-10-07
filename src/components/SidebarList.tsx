@@ -22,7 +22,7 @@ const SidebarList = () => {
   return (
     <List>
       {listItems.map(item => (
-        <SidebarListItem item={item} />
+        <SidebarListItem key={item.title} item={item} />
       ))}
     </List>
   );
