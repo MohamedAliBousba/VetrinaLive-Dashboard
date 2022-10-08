@@ -1,0 +1,1 @@
+export const API_ENDPOINT = "https://dossier-dev-api-p95qp.ondigitalocean.app/";
