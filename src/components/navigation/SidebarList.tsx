@@ -1,5 +1,4 @@
-import ListItem from "@mui/material/ListItem";
-import { List, styled } from "@mui/material";
+import { List } from "@mui/material";
 import HomeIcon from "../../assets/HomeIcon";
 import CatalogIcon from "../../assets/CatalogIcon";
 import OrdersIcon from "../../assets/OrdersIcon";

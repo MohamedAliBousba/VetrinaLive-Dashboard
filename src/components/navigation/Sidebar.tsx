@@ -39,8 +39,12 @@ const StyledDrawer = styled(Drawer)(({ open, theme }) => ({
   }
 }));
 
-const Sidebar = (props: any) => {
-  const { open, setOpen } = props;
+interface ISidebar {
+  open?: boolean;
+  setOpen: (value: boolean) => void;
+}
+
+const Sidebar: React.FC<ISidebar> = ({ open, setOpen }) => {
   const [selectedShop, setSelectedShop] = useState("Fenoh Store");
 
   const handleDrawerOpen = () => {

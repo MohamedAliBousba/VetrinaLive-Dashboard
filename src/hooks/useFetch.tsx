@@ -1,7 +1,21 @@
 import { useEffect, useState } from "react";
 
-const useFetch = (endpoint: any) => {
-  const [data, setData] = useState<any[]>([]);
+interface IProduct {
+  brand?: string;
+  category?: string;
+  description?: string;
+  discountPercentage?: number;
+  id?: number;
+  images?: string[];
+  price?: number;
+  rating?: number;
+  stock?: number;
+  thumbnail?: string;
+  title?: string;
+}
+
+const useFetch = (endpoint: string) => {
+  const [data, setData] = useState<IProduct[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
 

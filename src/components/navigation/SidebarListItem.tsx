@@ -49,7 +49,16 @@ const ordersBadgeStyle = {
     fontWeight: 500
 }
 
-const SidebarListItem = ({ item }: any) => {
+interface ISidebarListItem {
+  item: {
+    title: string;
+    icon?: React.ReactNode;
+    subItems?: string[];
+    badge?: number
+  }
+}
+
+const SidebarListItem: React.FC<ISidebarListItem> = ({ item }) => {
   const [open, setOpen] = useState(false);
 
   const handleOpen = () => {

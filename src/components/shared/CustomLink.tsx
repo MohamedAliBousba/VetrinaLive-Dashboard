@@ -1,8 +1,14 @@
 import { Link, Stack } from "@mui/material";
-import React from "react";
 import ArrowRightIcon from "../../assets/ArrowRightIcon";
 
-const CustomLink = ({ color = "#21B8F9", isArrow = false, children, sx }: any) => {
+interface ICustomLink {
+  color?: string;
+  isArrow?: boolean;
+  children?: React.ReactNode;
+  sx?: React.CSSProperties
+}
+
+const CustomLink: React.FC<ICustomLink> = ({ color = "#21B8F9", isArrow = false, children, sx }: any) => {
   return (
     <Link sx={{ color, ...sx }} href="/#">
       {isArrow ? (

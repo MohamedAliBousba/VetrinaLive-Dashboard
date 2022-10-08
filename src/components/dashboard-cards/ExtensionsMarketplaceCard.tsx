@@ -5,7 +5,6 @@ import CustomCard from "./CustomCard";
 
 const subCardContainerStyle = {
   height: 150,
-  // width: 152,
   borderRadius: 10,
   display: "flex",
   alignItems: "center",

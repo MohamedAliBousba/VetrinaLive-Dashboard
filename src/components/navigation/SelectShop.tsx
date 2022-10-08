@@ -15,7 +15,15 @@ const SelectTitle = styled("h5")(() => ({
   marginLeft: 11
 }));
 
-const SelectShop = ({ selectedShop, setSelectedShop }: any) => {
+interface ISelectShop {
+  selectedShop?: string;
+  setSelectedShop: (value: string) => void;
+}
+
+const SelectShop: React.FC<ISelectShop> = ({
+  selectedShop,
+  setSelectedShop
+}) => {
   const handleChange = (event: SelectChangeEvent) => {
     setSelectedShop(event.target.value as string);
   };
@@ -23,7 +31,7 @@ const SelectShop = ({ selectedShop, setSelectedShop }: any) => {
   return (
     <>
       <SelectTitle>Select your shop</SelectTitle>
-      <FormControl fullWidth sx={{padding: "10px 24px 10px 11px"}}>
+      <FormControl fullWidth sx={{ padding: "10px 24px 10px 11px" }}>
         <Select
           labelId="demo-simple-select-label"
           id="demo-simple-select"

@@ -7,17 +7,21 @@ const cardStyle = {
     justifyContent: "space-between"
 }
 
-const cardHeader = {
-
-}
-
 const cardHeaderTitle = {
     fontSize: 20,
     fontWeight: 500,
     color: "#103B66"
 }
 
-const CustomCard = ({ sx, children, icon, title, menu } :any) => {
+interface ICustomCard {
+    sx?: React.CSSProperties;
+    children?: React.ReactNode;
+    icon?: React.ReactNode;
+    title?: string;
+    menu?: React.ReactNode
+}
+
+const CustomCard: React.FC<ICustomCard> = ({ sx, children, icon, title, menu }) => {
 
     return (
         <Paper elevation={2} sx={{ borderRadius: "10px", ...cardStyle, ...sx}}>

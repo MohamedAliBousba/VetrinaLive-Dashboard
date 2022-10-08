@@ -1,5 +1,4 @@
 import { Container, Grid } from "@mui/material";
-import React from "react";
 import ConfigureShopCard from "./ConfigureShopCard";
 import CustomerSupportCard from "./CustomerSupportCard";
 import ExtensionsMarketplaceCard from "./ExtensionsMarketplaceCard";
@@ -27,7 +26,7 @@ const rightCards = [
 
 const LeftCardsCollection = () => {
   return (
-    <Grid container spacing={2} xs={8}>
+    <Grid container spacing={2}>
       {leftCards.map((card, index) => (
         <Grid item xs={index === 4 ? 12 : 6} key={index}>
           {card}
@@ -39,13 +38,7 @@ const LeftCardsCollection = () => {
 
 const RightCardsCollection = () => {
   return (
-    <Grid
-      container
-      spacing={2}
-      xs={4}
-      alignContent="flex-start"
-      sx={{ marginLeft: .5 }}
-    >
+    <Grid container spacing={2}>
       {rightCards.map((card, index) => (
         <Grid item xs={12} key={index}>
           {card}
@@ -59,8 +52,12 @@ const CardsCollection = () => {
   return (
     <Container sx={{ transform: "translateY(-40px)" }}>
       <Grid container spacing={2}>
-        <LeftCardsCollection />
-        <RightCardsCollection />
+        <Grid item xs={8}>
+          <LeftCardsCollection />
+        </Grid>
+        <Grid item xs={4}>
+          <RightCardsCollection />
+        </Grid>
       </Grid>
     </Container>
   );

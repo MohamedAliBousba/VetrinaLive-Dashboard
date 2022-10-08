@@ -6,7 +6,7 @@ import FlashIcon from "../../assets/FlashIcon";
 const drawerWidth = 240;
 
 const toolbarStyle = {
-  paddingRight: 24 // keep right padding when drawer closed
+  paddingRight: 24
 };
 
 interface AppBarProps extends MuiAppBarProps {
@@ -36,13 +36,13 @@ const StyledAppBar = styled(AppBar, {
   })
 }));
 
-const StyledBadge = styled(Badge)<BadgeProps>(({ theme }) => ({
-  '& .MuiBadge-badge': {
+const StyledBadge = styled(Badge)<BadgeProps>(() => ({
+  "& .MuiBadge-badge": {
     right: -5,
     top: -3,
     backgroundColor: "#F33451",
     color: "#ffffff"
-  },
+  }
 }));
 
 const titleStyle = {
@@ -56,14 +56,21 @@ const whatsNewStyle = {
   fontWeight: 400
 };
 
-const Header = (props: any) => {
-  const { open } = props;
+interface IHeader {
+  open?: boolean;
+}
 
+const Header: React.FC<IHeader> = ({ open }) => {
   return (
     <StyledAppBar position="absolute" open={open}>
       <Toolbar style={toolbarStyle}>
         <h2 style={titleStyle}>Dashboard</h2>
-        <Stack direction="row" spacing={1} alignItems="center" sx={{marginRight: 2}}>
+        <Stack
+          direction="row"
+          spacing={1}
+          alignItems="center"
+          sx={{ marginRight: 2 }}
+        >
           <FlashIcon />
           <StyledBadge badgeContent={4}>
             <h2 style={whatsNewStyle}>What's new</h2>

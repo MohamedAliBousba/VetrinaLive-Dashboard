@@ -1,4 +1,4 @@
-import { Box, Container, Stack } from "@mui/material";
+import { Container, Stack } from "@mui/material";
 import ExternalLinkIcon from "../assets/ExternalLinkIcon";
 
 const sectionStyle = {

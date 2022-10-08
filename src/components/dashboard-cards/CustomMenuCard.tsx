@@ -10,13 +10,21 @@ const StyledButton = styled(Button)<ButtonProps>(() => ({
   color: "#666666"
 }));
 
-const CustomMenuCard = ({
+interface ICustomMenuCard {
+  children?: React.ReactNode;
+  icon?: React.ReactNode;
+  title?: string;
+  selectedItem?: string;
+  setSelectedItem: (value: string) => void;
+}
+
+const CustomMenuCard: React.FC<ICustomMenuCard> = ({
   children,
   icon,
   title,
   selectedItem,
   setSelectedItem
-}: any) => {
+}) => {
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
 
   const open = Boolean(anchorEl);
@@ -34,10 +42,7 @@ const CustomMenuCard = ({
 
   return (
     <CustomCard
-      sx={{
-        height: 220
-        // width: 349
-      }}
+      sx={{ height: 220 }}
       icon={icon}
       title={title}
       menu={

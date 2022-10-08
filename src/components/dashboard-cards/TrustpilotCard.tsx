@@ -7,7 +7,6 @@ const TrustpilotCard = () => {
     <CustomCard
       sx={{
         height: 232,
-        // width: 350,
         backgroundColor: "#000032"
       }}
       icon={<img src="/images/trustpilot.png" alt="trustpilot" />}
