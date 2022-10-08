@@ -5,7 +5,7 @@ import CustomCard from "./CustomCard";
 
 const subCardContainerStyle = {
   height: 150,
-  width: 152,
+  // width: 152,
   borderRadius: 10,
   display: "flex",
   alignItems: "center",
@@ -35,7 +35,7 @@ const ExtensionSubCard = ({ children, color, title }: any) => {
 const ExtensionsMarketplaceCard = () => {
   return (
     <CustomCard
-      sx={{ height: 343, width: 357, overflow: "hidden" }}
+      sx={{ height: 343, overflow: "hidden" }}
       icon={<ExtensionIcon />}
       title="Extensions Marketplace"
     >

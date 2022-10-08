@@ -1,5 +1,4 @@
 import { Avatar, Button, Stack, styled } from "@mui/material";
-import React from "react";
 import HeadphonesIcon from "../../assets/HeadphonesIcon";
 import CustomCard from "./CustomCard";
 
@@ -13,13 +12,16 @@ const StyledButton = styled(Button)(() => ({
     textTransform: "none",
     width: 168,
     height: 50,
-    backgroundColor: "#21B8F9"
+    backgroundColor: "#21B8F9",
+    fontWeight: 600,
 }))
 
 const CustomerSupportCard = () => {
   return (
     <CustomCard
-      sx={{ height: 197, width: 349 }}
+      sx={{ height: 197, 
+        // width: 349
+    }}
       title="Customer support"
       icon={<HeadphonesIcon />}
     >

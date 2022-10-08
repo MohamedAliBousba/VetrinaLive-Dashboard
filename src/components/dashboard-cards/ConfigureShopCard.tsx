@@ -14,7 +14,7 @@ const ConfigureShopCard = () => {
     <CustomCard
       sx={{
         height: 289,
-        width: 350
+        // width: 350
       }}
       icon={<ToolIcon />}
       title="Configure your shop"

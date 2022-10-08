@@ -10,37 +10,57 @@ import PhoneCard from "./PhoneCard";
 import TrustpilotCard from "./TrustpilotCard";
 import VisitorsCard from "./VisitorsCard";
 
+const leftCards = [
+  <VisitorsCard />,
+  <OrdersCard />,
+  <PhoneCard />,
+  <ExtensionsMarketplaceCard />,
+  <LatestProductsCard />
+];
+
+const rightCards = [
+  <ConfigureShopCard />,
+  <TrustpilotCard />,
+  <InviteFriendCard />,
+  <CustomerSupportCard />
+];
+
+const LeftCardsCollection = () => {
+  return (
+    <Grid container spacing={2} xs={8}>
+      {leftCards.map((card, index) => (
+        <Grid item xs={index === 4 ? 12 : 6} key={index}>
+          {card}
+        </Grid>
+      ))}
+    </Grid>
+  );
+};
+
+const RightCardsCollection = () => {
+  return (
+    <Grid
+      container
+      spacing={2}
+      xs={4}
+      alignContent="flex-start"
+      sx={{ marginLeft: .5 }}
+    >
+      {rightCards.map((card, index) => (
+        <Grid item xs={12} key={index}>
+          {card}
+        </Grid>
+      ))}
+    </Grid>
+  );
+};
+
 const CardsCollection = () => {
   return (
-    <Container sx={{transform: "translateY(-40px)"}}>
+    <Container sx={{ transform: "translateY(-40px)" }}>
       <Grid container spacing={2}>
-        <Grid item xs={4}>
-          <VisitorsCard />
-        </Grid>
-        <Grid item xs={4}>
-          <OrdersCard />
-        </Grid>
-        <Grid item xs={4}>
-          <ConfigureShopCard />
-        </Grid>
-        <Grid item xs={4}>
-          <PhoneCard />
-        </Grid>
-        <Grid item xs={4}>
-          <ExtensionsMarketplaceCard />
-        </Grid>
-        <Grid item xs={4}>
-          <TrustpilotCard />
-        </Grid>
-        <Grid item xs={8}>
-          <LatestProductsCard />
-        </Grid>
-        <Grid item xs={4}>
-          <InviteFriendCard />
-        </Grid>
-        <Grid item xs={4}>
-          <CustomerSupportCard />
-        </Grid>
+        <LeftCardsCollection />
+        <RightCardsCollection />
       </Grid>
     </Container>
   );

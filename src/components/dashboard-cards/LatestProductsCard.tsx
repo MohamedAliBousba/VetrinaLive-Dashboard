@@ -20,7 +20,7 @@ const LatestProductsCard = () => {
   return (
     <CustomCard
       sx={{
-        width: 729,
+        // width: 729,
         height: 550
       }}
       icon={<CatalogIcon />}

@@ -5,8 +5,7 @@ const sectionStyle = {
   backgroundColor: "#F3A35C",
   borderRadius: "10px",
   height: 343,
-  weight: 348,
-  padding: "32px 23px"
+  padding: "32px 23px",
 };
 
 const flexStyle = {

@@ -1,10 +1,4 @@
-import {
-  Button,
-  ButtonProps,
-  Menu,
-  MenuItem,
-  styled
-} from "@mui/material";
+import { Button, ButtonProps, Menu, MenuItem, styled } from "@mui/material";
 import React from "react";
 import ChevronDownIcon from "../../assets/ChevronDownIcon";
 import CustomCard from "./CustomCard";
@@ -16,9 +10,15 @@ const StyledButton = styled(Button)<ButtonProps>(() => ({
   color: "#666666"
 }));
 
-const CustomMenuCard = ({children, icon, title, selectedItem, setSelectedItem}: any) => {
+const CustomMenuCard = ({
+  children,
+  icon,
+  title,
+  selectedItem,
+  setSelectedItem
+}: any) => {
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
-  
+
   const open = Boolean(anchorEl);
   const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
     setAnchorEl(event.currentTarget);
@@ -34,7 +34,10 @@ const CustomMenuCard = ({children, icon, title, selectedItem, setSelectedItem}: 
 
   return (
     <CustomCard
-      sx={{ height: 220, width: 349 }}
+      sx={{
+        height: 220
+        // width: 349
+      }}
       icon={icon}
       title={title}
       menu={

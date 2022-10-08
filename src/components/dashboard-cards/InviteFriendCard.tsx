@@ -13,7 +13,7 @@ const InviteFriendCard = () => {
   return (
     <CustomCard
       sx={{
-        width: 350,
+        // width: 350,
         height: 231
       }}
       icon={<UsersIcon />}
