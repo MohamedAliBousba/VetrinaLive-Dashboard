@@ -19,12 +19,13 @@ const itemStyle = {
 
 interface IListItem extends ListItemProps {
   issubitem?: boolean | number;
+  active?: boolean | number
 }
 
-const StyledListItem = styled(ListItem)<IListItem>(({ issubitem }) => ({
+const StyledListItem = styled(ListItem)<IListItem>(({ issubitem, active }) => ({
   paddingTop: 4,
   paddingBottom: 4,
-  backgroundColor: issubitem ? "#E9F8FE" : "inherit",
+  backgroundColor: issubitem ? "#E9F8FE" : active ? "#F7F7F7" : "inherit",
   "&:hover": {
     cursor: "pointer",
     backgroundColor: "#F7F7F7"
@@ -32,7 +33,7 @@ const StyledListItem = styled(ListItem)<IListItem>(({ issubitem }) => ({
   "& .MuiListItemText-primary": {
     fontSize: 14,
     fontWeight: 400,
-    color: "#233B53"
+    color: active ? "#21B8F9" :"#233B53"
   }
 }));
 
@@ -52,14 +53,16 @@ const ordersBadgeStyle = {
 interface ISidebarListItem {
   item: {
     title: string;
-    icon?: React.ReactNode;
+    icon?: any;
     subItems?: string[];
     badge?: number
   }
 }
 
 const SidebarListItem: React.FC<ISidebarListItem> = ({ item }) => {
+  const {icon: Icon} = item
   const [open, setOpen] = useState(false);
+  const active = item?.title === "Dashboard" // We use React Router and find active route with on the route path
 
   const handleOpen = () => {
     setOpen(!open);
@@ -67,8 +70,8 @@ const SidebarListItem: React.FC<ISidebarListItem> = ({ item }) => {
 
   return (
     <Fragment>
-      <StyledListItem onClick={handleOpen}>
-        <ListItemIcon sx={itemStyle}>{item.icon}</ListItemIcon>
+      <StyledListItem onClick={handleOpen} active={active?1:0}>
+        <ListItemIcon sx={itemStyle}><Icon color={active ? "#21B8F9": null} /></ListItemIcon>
         <ListItemText primary={item.title} />
         {item.subItems && item.subItems.length !== 0 && (
           <>{open ? <ChevronUpIcon /> : <ChevronDownIcon />}</>
