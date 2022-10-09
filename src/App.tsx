@@ -1,12 +1,13 @@
+import { ThemeProvider } from "@mui/material";
 import Dashboard from "./pages/Dashboard";
+import theme from "./styles/theme";
 
 const App = () => {
-
   return (
-    <div>
+    <ThemeProvider theme={theme}>
       <Dashboard />
-    </div>
+    </ThemeProvider>
   );
-}
+};
 
 export default App;
