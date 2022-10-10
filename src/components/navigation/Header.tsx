@@ -62,7 +62,7 @@ interface IHeader {
 
 const Header: React.FC<IHeader> = ({ open }) => {
   return (
-    <StyledAppBar position="absolute" open={open}>
+    <StyledAppBar open={open}>
       <Toolbar style={toolbarStyle}>
         <h2 style={titleStyle}>Dashboard</h2>
         <Stack

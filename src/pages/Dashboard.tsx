@@ -12,11 +12,11 @@ const Dashboard = () => {
     <Box display="flex">
       <Header open={open} />
       <Sidebar open={open} setOpen={setOpen} />
-      <div style={{width: "100%"}}>
+      <Box style={{ width: "100%" }}>
         <Toolbar />
         <DashboardWelcomeSection />
         <CardsCollection />
-      </div>
+      </Box>
     </Box>
   );
 };

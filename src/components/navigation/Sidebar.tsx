@@ -1,7 +1,7 @@
 import Divider from "@mui/material/Divider";
 import IconButton from "@mui/material/IconButton";
-import { styled } from "@mui/material";
-import Drawer from "@mui/material/Drawer";
+import { CSSObject, styled, Theme } from "@mui/material";
+import MuiDrawer from "@mui/material/Drawer";
 import SidebarList from "./SidebarList";
 import Logo from "../../assets/Logo";
 import MenuIcon from "../../assets/MenuIcon";
@@ -17,26 +17,42 @@ const toolbarIconStyle = {
   padding: "11px 8px"
 };
 
-const StyledDrawer = styled(Drawer)(({ open, theme }) => ({
-  "& .MuiDrawer-paper": {
-    minHeight: "100vh",
-    position: "relative",
-    whiteSpace: "nowrap",
-    width: drawerWidth,
-    transition: theme.transitions.create("width", {
-      easing: theme.transitions.easing.sharp,
-      duration: theme.transitions.duration.enteringScreen
-    }),
-    boxSizing: "border-box",
-    ...(!open && {
-      overflowX: "hidden",
-      transition: theme.transitions.create("width", {
-        easing: theme.transitions.easing.sharp,
-        duration: theme.transitions.duration.leavingScreen
-      }),
-      width: theme.spacing(6.5)
-    })
-  }
+const openedMixin = (theme: Theme): CSSObject => ({
+  width: drawerWidth,
+  transition: theme.transitions.create("width", {
+    easing: theme.transitions.easing.sharp,
+    duration: theme.transitions.duration.enteringScreen,
+  }),
+  overflowX: "hidden",
+});
+
+const closedMixin = (theme: Theme): CSSObject => ({
+  transition: theme.transitions.create("width", {
+    easing: theme.transitions.easing.sharp,
+    duration: theme.transitions.duration.leavingScreen,
+  }),
+  overflowX: "hidden",
+  width: theme.spacing(6.5),
+  [theme.breakpoints.up("sm")]: {
+    width: `calc(${theme.spacing(8)} + 1px)`,
+  },
+});
+
+const Drawer = styled(MuiDrawer, {
+  shouldForwardProp: (prop) => prop !== "open",
+})(({ theme, open }) => ({
+  width: drawerWidth,
+  flexShrink: 0,
+  whiteSpace: "nowrap",
+  boxSizing: "border-box",
+  ...(open && {
+    ...openedMixin(theme),
+    "& .MuiDrawer-paper": openedMixin(theme),
+  }),
+  ...(!open && {
+    ...closedMixin(theme),
+    "& .MuiDrawer-paper": closedMixin(theme),
+  }),
 }));
 
 interface ISidebar {
@@ -52,7 +68,7 @@ const Sidebar: React.FC<ISidebar> = ({ open, setOpen }) => {
   };
 
   return (
-    <StyledDrawer open={open} variant="permanent">
+    <Drawer open={open} variant="permanent">
       <div style={toolbarIconStyle}>
         <Logo />
         <IconButton onClick={handleDrawerOpen}>
@@ -68,7 +84,7 @@ const Sidebar: React.FC<ISidebar> = ({ open, setOpen }) => {
         />
       )}
       <Divider />
-    </StyledDrawer>
+    </Drawer>
   );
 };
 
