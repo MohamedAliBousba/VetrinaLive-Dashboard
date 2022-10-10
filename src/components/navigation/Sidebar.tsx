@@ -1,12 +1,13 @@
 import Divider from "@mui/material/Divider";
 import IconButton from "@mui/material/IconButton";
-import { CSSObject, styled, Theme } from "@mui/material";
+import { Box, CSSObject, styled, Theme } from "@mui/material";
 import MuiDrawer from "@mui/material/Drawer";
 import SidebarList from "./SidebarList";
 import Logo from "../../assets/Logo";
 import MenuIcon from "../../assets/MenuIcon";
 import { useState } from "react";
 import SelectShop from "./SelectShop";
+import CustomScrollbar from "../shared/CustomScrollbar";
 
 const drawerWidth = 240;
 
@@ -21,25 +22,22 @@ const openedMixin = (theme: Theme): CSSObject => ({
   width: drawerWidth,
   transition: theme.transitions.create("width", {
     easing: theme.transitions.easing.sharp,
-    duration: theme.transitions.duration.enteringScreen,
+    duration: theme.transitions.duration.enteringScreen
   }),
-  overflowX: "hidden",
+  overflowX: "hidden"
 });
 
 const closedMixin = (theme: Theme): CSSObject => ({
   transition: theme.transitions.create("width", {
     easing: theme.transitions.easing.sharp,
-    duration: theme.transitions.duration.leavingScreen,
+    duration: theme.transitions.duration.leavingScreen
   }),
   overflowX: "hidden",
-  width: theme.spacing(6.5),
-  [theme.breakpoints.up("sm")]: {
-    width: `calc(${theme.spacing(8)} + 1px)`,
-  },
+  width: theme.spacing(7),
 });
 
 const Drawer = styled(MuiDrawer, {
-  shouldForwardProp: (prop) => prop !== "open",
+  shouldForwardProp: prop => prop !== "open"
 })(({ theme, open }) => ({
   width: drawerWidth,
   flexShrink: 0,
@@ -47,12 +45,12 @@ const Drawer = styled(MuiDrawer, {
   boxSizing: "border-box",
   ...(open && {
     ...openedMixin(theme),
-    "& .MuiDrawer-paper": openedMixin(theme),
+    "& .MuiDrawer-paper": openedMixin(theme)
   }),
   ...(!open && {
     ...closedMixin(theme),
-    "& .MuiDrawer-paper": closedMixin(theme),
-  }),
+    "& .MuiDrawer-paper": closedMixin(theme)
+  })
 }));
 
 interface ISidebar {
@@ -69,21 +67,23 @@ const Sidebar: React.FC<ISidebar> = ({ open, setOpen }) => {
 
   return (
     <Drawer open={open} variant="permanent">
-      <div style={toolbarIconStyle}>
-        <Logo />
-        <IconButton onClick={handleDrawerOpen}>
-          <MenuIcon />
-        </IconButton>
-      </div>
-      <Divider />
-      <SidebarList />
-      {open && (
-        <SelectShop
-          selectedShop={selectedShop}
-          setSelectedShop={setSelectedShop}
-        />
-      )}
-      <Divider />
+      <CustomScrollbar>
+        <div style={toolbarIconStyle}>
+          <Logo />
+          <IconButton onClick={handleDrawerOpen}>
+            <MenuIcon />
+          </IconButton>
+        </div>
+        <Divider />
+        <SidebarList />
+        {open && (
+          <SelectShop
+            selectedShop={selectedShop}
+            setSelectedShop={setSelectedShop}
+          />
+        )}
+        <Divider />
+      </CustomScrollbar>
     </Drawer>
   );
 };

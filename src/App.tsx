@@ -1,4 +1,4 @@
-import { ThemeProvider } from "@mui/material";
+import { CssBaseline, ThemeProvider } from "@mui/material";
 import Dashboard from "./pages/Dashboard";
 import theme from "./styles/theme";
 
