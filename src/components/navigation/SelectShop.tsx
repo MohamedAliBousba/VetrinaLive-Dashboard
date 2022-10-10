@@ -33,12 +33,13 @@ const SelectShop: React.FC<ISelectShop> = ({
       <SelectTitle>Select your shop</SelectTitle>
       <FormControl fullWidth sx={{ padding: "10px 24px 10px 11px" }}>
         <Select
-          labelId="demo-simple-select-label"
-          id="demo-simple-select"
           value={selectedShop}
           onChange={handleChange}
         >
           <MenuItem value="Fenoh Store">Fenoh Store</MenuItem>
+          { Array(3).fill(0).map((item, index) => (
+            <MenuItem value={`Store: ${index + 1}`}>{`Store: ${index + 1}`}</MenuItem>
+          )) }
         </Select>
       </FormControl>
     </>

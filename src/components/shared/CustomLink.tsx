@@ -8,7 +8,7 @@ interface ICustomLink {
   sx?: React.CSSProperties
 }
 
-const CustomLink: React.FC<ICustomLink> = ({ color = "#21B8F9", isArrow = false, children, sx }: any) => {
+const CustomLink: React.FC<ICustomLink> = ({ color = "#21B8F9", isArrow = false, children, sx }) => {
   return (
     <Link sx={{ color, ...sx }} href="/#">
       {isArrow ? (

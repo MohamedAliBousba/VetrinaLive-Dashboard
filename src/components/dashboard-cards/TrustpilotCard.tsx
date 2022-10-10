@@ -1,4 +1,3 @@
-import React from "react";
 import CustomLink from "../shared/CustomLink";
 import CustomCard from "./CustomCard";
 
@@ -18,7 +17,7 @@ const TrustpilotCard = () => {
         <span style={{ fontWeight: 700 }}>50 additional products</span>
       </p>
 
-      <CustomLink isArrow color="#00C48C">
+      <CustomLink isArrow color="#00C48C" sx={{textDecoration: "underline"}}>
         Write a review on Trustpilot
       </CustomLink>
     </CustomCard>
