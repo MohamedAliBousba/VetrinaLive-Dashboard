@@ -38,7 +38,7 @@ const SelectShop: React.FC<ISelectShop> = ({
         >
           <MenuItem value="Fenoh Store">Fenoh Store</MenuItem>
           { Array(3).fill(0).map((item, index) => (
-            <MenuItem value={`Store: ${index + 1}`}>{`Store: ${index + 1}`}</MenuItem>
+            <MenuItem value={`Store: ${index + 1}`} key={index}>{`Store: ${index + 1}`}</MenuItem>
           )) }
         </Select>
       </FormControl>
