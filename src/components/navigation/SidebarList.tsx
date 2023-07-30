@@ -8,7 +8,6 @@ import DeliveryIcon from "../../assets/DeliveryIcon";
 import PaymentIcon from "../../assets/PaymentIcon";
 import BrushIcon from "../../assets/BrushIcon";
 import CreditCardIcon from "../../assets/CreditCardIcon";
-import IntegrationIcon from "../../assets/IntegrationIcon";
 import ExtensionIcon from "../../assets/ExtensionIcon";
 import SettingsIcon from "../../assets/SettingsIcon";
 import LogoutIcon from "../../assets/LogoutIcon";
@@ -55,7 +54,6 @@ const listItems = [
   { title: "Payment Options", icon: PaymentIcon },
   { title: "Store Design", icon: BrushIcon },
   { title: "Subscription", icon: CreditCardIcon },
-  { title: "Integrations", icon: IntegrationIcon },
   { title: "Extensions", icon: ExtensionIcon },
   { title: "Settings", icon: SettingsIcon },
   { title: "Logout", icon: LogoutIcon },
